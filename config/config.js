@@ -44,22 +44,25 @@ var config = {
 			config:{
 			displayType:"analog",
 			analogFace:"face-008",
-			
-
-			}
+		}
 		},
 		{
 			module: "calendar",
 			header: "Egypt Holidays",
 			position: "top_left",
 			config: {
+				fetchInterval:10000, // in ms 
 				calendars: [
 					{
 						symbol: "calendar-check",
-						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"					},
-						{
-							symbol: "calendar-check",
-							url: "https://calendar.google.com/calendar/ical/esraa.abdelhakiim%40gmail.com/public/basic.ics"					}
+						// https://www.calendarlabs.com/ical-calendar/ics/43/Denmark_Holidays.ics
+						url: "webcal://www.calendarlabs.com/ical-calendar/ics/43/Denmark_Holidays.ics"				
+					},
+					{
+						symbol: "calendar-check",
+						// Enter your private cal url 
+						url: ""					
+					}		
 				]
 			}
 		},
@@ -82,9 +85,26 @@ var config = {
 				appid: "54b85fab6af9dd58af1f45a1f31b54ef"
 			}
 		},
+
 		{
+			module: "MMM-Spotify",
+			position: "top_left",
+			config: {
+			  debug: true,
+			  showDeviceButton:false,
+			  style: "mini", // "default", "mini" available.
+			  control: "hidden", // "default" or "hidden"
+			  moduleWidth: 300, // width of the module in px
+			  miniBarConfig: {
+				album: false, // display Album name in miniBar style
+				scroll: false, // scroll title / artist / album in miniBar style
+				logo: false, // display Spotify logo in miniBar style
+			  }
+			}
+		  },
+		  {
 			module: "newsfeed",
-			position: "bottom_bar",
+			position: "top_left",
 			config: {
 				feeds: [
 					{

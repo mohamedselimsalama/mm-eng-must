@@ -10,5 +10,8 @@ then install the libs we need
 npm install 
 ```
 
-Tasks
-
+## Imporrtant NOTES 
+* To run spotify you have to authrise it first by 
+```
+node modules/MMM-Spotify/first_auth.js
+```

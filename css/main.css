@@ -1,3 +1,7 @@
+#SPOTIFY_DEVICE,#SPOTIFY_ALBUM{
+  display: none !important;
+}
+
 html {
   cursor: none;
   overflow: hidden;

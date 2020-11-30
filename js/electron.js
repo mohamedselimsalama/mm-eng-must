@@ -22,7 +22,7 @@ function createWindow() {
 	app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
 	var electronOptionsDefaults = {
 		width: 800,
-		height: 600,
+		height: 800,
 		x: 0,
 		y: 0,
 		darkTheme: true,
