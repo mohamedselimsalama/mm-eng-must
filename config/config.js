@@ -42,20 +42,24 @@ var config = {
 			module: "clock",
 			position: "top_left",
 			config:{
-				displayType:"analog",
-				analogFace:"face-002",
-				analogSize:"100px"
+			displayType:"analog",
+			analogFace:"face-008",
+			
+
 			}
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
+			header: "Egypt Holidays",
 			position: "top_left",
 			config: {
 				calendars: [
 					{
 						symbol: "calendar-check",
-						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"					}
+						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"					},
+						{
+							symbol: "calendar-check",
+							url: "https://calendar.google.com/calendar/ical/esraa.abdelhakiim%40gmail.com/public/basic.ics"					}
 				]
 			}
 		},
@@ -63,8 +67,8 @@ var config = {
 			module: "currentweather",
 			position: "top_right",
 			config: {
-				location: "Cairo",
-				locationID: "360631", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
+				location: "cairo",
+				locationID: "360630", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
 				appid: "54b85fab6af9dd58af1f45a1f31b54ef"
 			}
 		},
@@ -73,19 +77,19 @@ var config = {
 			position: "top_right",
 			header: "Weather Forecast",
 			config: {
-				location: "Cairo",
-				locationID: "360631", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
+				location: "cairo",
+				locationID: "360630", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
 				appid: "54b85fab6af9dd58af1f45a1f31b54ef"
 			}
 		},
 		{
 			module: "newsfeed",
-			position: "bottom_left",
+			position: "bottom_bar",
 			config: {
 				feeds: [
 					{
 						title: "New York Times",
-						url: "https://feeds.bbci.co.uk/arabic/rss.xml"
+						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
 					}
 				],
 				showSourceTitle: true,
