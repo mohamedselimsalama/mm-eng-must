@@ -55,13 +55,13 @@ var config = {
 				calendars: [
 					{
 						symbol: "calendar-check",
-						// https://www.calendarlabs.com/ical-calendar/ics/43/Denmark_Holidays.ics
-						url: "webcal://www.calendarlabs.com/ical-calendar/ics/43/Denmark_Holidays.ics"				
+						// https://www.calendarlabs.com/ical-calendar/ics/44/Egypt_Holidays.ics
+						url: "webcal://www.calendarlabs.com/ical-calendar/ics/44/Egypt_Holidays.ics"				
 					},
 					{
 						symbol: "calendar-check",
 						// Enter your private cal url 
-						url: ""					
+						url: "https://calendar.google.com/calendar/ical/esraa.abdelhakiim%40gmail.com/private-ba7a1a6116b6d3abef41cd22baebaa0d/basic.ics"					
 					}		
 				]
 			}
