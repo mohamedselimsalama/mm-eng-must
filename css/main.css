@@ -1,9 +1,9 @@
 #SPOTIFY_DEVICE,#SPOTIFY_ALBUM{
-  display: none !important;
+   display: none !important; */
 }
 
 html {
-  cursor: none;
+  /* cursor: none; */
   overflow: hidden;
   background: #000;
 }
