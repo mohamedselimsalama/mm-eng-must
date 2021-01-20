@@ -1,5 +1,6 @@
 Module.register("esraa",{
     notificationReceived: function(notification, payload, sender) {
+		console.log("Payload Sent from the voice command is"+payload);
 		switch (notification) {
             case "ESRAA_PLAY":
                 this.sendSocketNotification("PLAY", payload)
@@ -16,6 +17,9 @@ Module.register("esraa",{
             case "ESRAA_VOLUME":
                 this.sendSocketNotification("VOLUME", payload)
                 break
+			case "ESRAA_VOL_UP":
+				this.sendNotification("SPOTIFY_VOLUME_UP")
+				break;
             default:
                 break;
         }
