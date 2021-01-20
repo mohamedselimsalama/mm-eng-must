@@ -47,7 +47,8 @@ var config = {
 				deactivateCommand: "goodbye mirror", //Command to deactivate all other commands
 				alertHeard: true, //Whether an alert should be shown when annyang hears a phrase (mostly for debug)
 				commands: {
-					"play *song": "ESRAA_PLAY"	
+					"play *song": "ESRAA_PLAY",
+					"volume up":"ESRAA_VOL_UP",
 				}
 			}
 		},
