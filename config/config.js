@@ -47,13 +47,7 @@ var config = {
 				deactivateCommand: "goodbye mirror", //Command to deactivate all other commands
 				alertHeard: true, //Whether an alert should be shown when annyang hears a phrase (mostly for debug)
 				commands: {
-					"command statement :variable (optional statement)": "SOCKET_NOTIFICATION_NAME",
-					//The payload of the socket notification will be whatever is said in the :variable
-					"command statement *variable": function(param){
-						alert("Whatever is said in the *variable space is given as the "+param);
-						//These function's 'this' are bound to the module's 'this' so you can do stuff like:
-						this.sendNotification("PAGE_SELECT", "2");
-					}
+					"play *song": "ESRAA_PLAY"	
 				}
 			}
 		},
