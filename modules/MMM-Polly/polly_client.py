@@ -29,6 +29,7 @@ class Client:
         text = text.replace('<', '&lt;').replace('>', '&gt;')
         text = '<speak><prosody rate="%d%%" pitch="%+d%%" volume="%+ddB">%s</prosody></speak>' % (rate, pitch, volume, text)
         resp = self.polly.synthesize_speech(OutputFormat='mp3',
+                Engine="neural",
                 Text=text,
                 TextType='ssml',
                 LanguageCode=lang,
