@@ -27,7 +27,7 @@ class Client:
 
     def speak(self, text, lang, voice, rate, pitch, volume, player):
         text = text.replace('<', '&lt;').replace('>', '&gt;')
-        text = '<speak><prosody rate="%d%%" pitch="%+d%%" volume="%+ddB">%s</prosody></speak>' % (rate, pitch, volume, text)
+        text = '<speak>%s</speak>' % (text)
         resp = self.polly.synthesize_speech(OutputFormat='mp3',
                 Engine="neural",
                 Text=text,
@@ -37,6 +37,7 @@ class Client:
         audio_stream = resp['AudioStream']
         audio_data = audio_stream.read()
         audio_stream.close()
+        subprocess.run([player, 'notify.mp3'])
         subprocess.run([player, '-'], input=audio_data, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
         print("FINISHED_UTTERANCE")

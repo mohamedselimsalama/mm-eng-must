@@ -24,15 +24,13 @@ Module.register("esraa", {
 			let start = new Date(parseInt(e.startDate)).toString();
 			if (moment().format("Y-MM-DD hh:mm") == moment(start).format("Y-MM-DD hh:mm")) {
 				console.log("Happining now");
-                // use polly to notify the user about the event
-                this.sendNotification("SPEECH_DISPATCHER_SAY",polly_will_say)
-            }
+				this.sendNotification("SPEECH_DISPATCHER_SAY", polly_will_say);
+			}
 		});
 	},
 
 	playMusic: function (data) {
-        this.sendNotification("SPEECH_DISPATCHER_SAY",
-        "Okay, Now playing "+data);
+		this.sendNotification("SPEECH_DISPATCHER_SAY", "Okay, Now playing " + data);
 		this.sendNotification("SPOTIFY_TRANSFER", "Bedroom Speaker");
 		this.sendNotification("SPOTIFY_SEARCH", { type: "artist,playlist", query: data.toLowerCase().replace(" ", "+"), random: false });
 	}
