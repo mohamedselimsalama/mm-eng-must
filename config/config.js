@@ -55,7 +55,7 @@ var config = {
 			header: "Your Events",
 			position: "top_left",
 			config: {
-				notifyInterval: 50000,
+				notifyInterval: 60000,
 				fetchInterval: 60000, // in ms 
 				broadcastEvents: false,
 				calendars: [
