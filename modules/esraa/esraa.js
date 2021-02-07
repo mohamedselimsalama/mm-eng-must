@@ -30,7 +30,8 @@ Module.register("esraa", {
 	},
 
 	playMusic: function (data) {
-        this.sendNotification("SPEECH_DISPATCHER_SAY","Okay, Now playing ");
+        this.sendNotification("SPEECH_DISPATCHER_SAY",
+        "Okay, Now playing "+data);
 		this.sendNotification("SPOTIFY_TRANSFER", "Bedroom Speaker");
 		this.sendNotification("SPOTIFY_SEARCH", { type: "artist,playlist", query: data.toLowerCase().replace(" ", "+"), random: false });
 	}
