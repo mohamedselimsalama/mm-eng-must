@@ -39,6 +39,25 @@ var config = {
 
 	modules: [
 		{
+			module: "calendar",
+			header: "Your Events",
+			position: "top_left",
+			config: {
+				notifyInterval: 50000,
+				fetchInterval: 60000, // in ms 
+				broadcastEvents: false,
+				calendars: [
+					{
+						name:"personal",
+						maximumNumberOfDays:7,
+						symbol: "calendar-check",
+						// Enter your private cal url 
+						url:"https://calendar.google.com/calendar/ical/youssef.afify122%40gmail.com/private-b3b26b62d91c232ca65dd993b9472fe6/basic.ics"
+					}		
+				]
+			}
+		},
+		{
 			module: "MMM-Voice-Commands",
 			config: {
 				debug: true, //Displays end results and errors from annyang in the Log
@@ -143,6 +162,9 @@ var config = {
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
 			}
+		},
+		{
+			module:"esraa"
 		},
 	]
 };

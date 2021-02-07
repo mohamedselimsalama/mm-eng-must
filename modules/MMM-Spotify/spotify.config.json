@@ -1,8 +1,8 @@
 [
-  {
-      "USERNAME": "SMARTMIRROR",
-      "CLIENT_ID" : "453eff450a8248b58392bfd79cf895b5",
-      "CLIENT_SECRET" : "040f1f59db3146cc878282fc26ec0746",
-      "TOKEN" : "./username_token.json"
-  }
+	{
+		"USERNAME": "SMARTMIRROR",
+		"CLIENT_ID": "453eff450a8248b58392bfd79cf895b5",
+		"CLIENT_SECRET": "040f1f59db3146cc878282fc26ec0746",
+		"TOKEN": "./username_token.json"
+	}
 ]

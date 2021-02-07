@@ -9,6 +9,7 @@
 Module.register("calendar", {
 	// Define module defaults
 	defaults: {
+		notifyInterval: 0,
 		maximumEntries: 10, // Total Maximum Entries
 		maximumNumberOfDays: 365,
 		displaySymbol: true,
@@ -120,6 +121,12 @@ Module.register("calendar", {
 			setInterval(function () {
 				self.addCalendar(calendar.url, calendar.auth, calendarConfig);
 			}, self.config.fetchInterval);
+
+			if (this.config.notifyInterval) {
+				setInterval(function () {
+					self.broadcastEvents();
+				}, self.config.notifyInterval);
+			}
 		}
 
 		this.calendarData = {};

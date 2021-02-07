@@ -9,43 +9,43 @@
 #SPOTIFY {
   position: relative;
   width: var(--sp-width);
-  border-radius:10px;
-  box-sizing:border-box;
-  color:#EEE;
-  font-weight:normal;
-  font-size:18px;
-  text-align:left;
-  line-height:120%;
-  text-shadow:black 2px 2px 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #eee;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: left;
+  line-height: 120%;
+  text-shadow: black 2px 2px 2px;
 }
 
 #SPOTIFY.inactive {
-  display:none;
+  display: none;
 }
 
 #SPOTIFY_BACKGROUND {
   background-size: cover;
   background-position: center center;
   filter: blur(16px) opacity(90%) grayscale(33%);
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 #SPOTIFY_FOREGROUND {
-  position:relative;
-  filter:none;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  box-sizing:border-box
+  position: relative;
+  filter: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 #SPOTIFY_INFO {
@@ -53,15 +53,15 @@
 }
 
 #SPOTIFY_INFO > * {
-  display:flex;
+  display: flex;
   justify-content: flex-start;
 }
 
 #SPOTIFY_INFO .infoicon {
   width: 20px;
-  margin-right:10px;
-  text-shadow:black 2px 2px 2px;
-  align-items:center;
+  margin-right: 10px;
+  text-shadow: black 2px 2px 2px;
+  align-items: center;
   text-align: center;
   line-height: inherit;
 }
@@ -71,25 +71,25 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display:inline-block;
+  display: inline-block;
 }
 
 #SPOTIFY_TITLE {
-  color:#FFF;
-  font-weight:bold;
+  color: #fff;
+  font-weight: bold;
 }
 
 #SPOTIFY_COVER {
   width: calc(var(--sp-width) - 40px);
   height: calc(var(--sp-width) - 40px);
-  margin-bottom:0.5vh;
+  margin-bottom: 0.5vh;
 }
 
 #SPOTIFY_COVER_IMAGE {
-  width:100%;
-  height:100%;
-  border-radius:10px;
-  box-shadow:black 1px 1px 1px 1px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: black 1px 1px 1px 1px;
 }
 
 .fade-in {
@@ -107,30 +107,30 @@
 }
 
 #SPOTIFY.pausing #SPOTIFY_COVER_IMAGE {
-  filter:brightness(50%) grayscale(75%);
+  filter: brightness(50%) grayscale(75%);
 }
 
 #SPOTIFY.modal #SPOTIFY_COVER_IMAGE {
-  filter:brightness(30%) blur(5px);
+  filter: brightness(30%) blur(5px);
 }
 
 #SPOTIFY_PROGRESS_TIME {
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between;
-  font-size:14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
 }
 
 #SPOTIFY_PROGRESS_BAR {
-  margin-bottom:10px;
-  height:10px;
+  margin-bottom: 10px;
+  height: 10px;
   width: 100%;
-  position:relative;
+  position: relative;
   border: 1px solid #aaaaaa;
 }
 
 progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-value {
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
@@ -138,22 +138,21 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
 }
 
 #SPOTIFY_CONTROL {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  font-size:32px;
-  color:#FFF;
+  font-size: 32px;
+  color: #fff;
 }
 
 #SPOTIFY_CONTROL > * {
-  border-radius:4px;
-  background-color:rgba(0,0,0,0.2);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 #SPOTIFY_CONTROL > *:active {
-  background-color:rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
-
 
 #SPOTIFY_CONTROL .iconify {
   justify-self: center;
@@ -167,47 +166,56 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
   height: inherit;
 }
 
-#SPOTIFY_ACCOUNT_LIST, #SPOTIFY_DEVICE_LIST {
+#SPOTIFY_ACCOUNT_LIST,
+#SPOTIFY_DEVICE_LIST {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: inherit;
   max-width: max-content;
-  background: rgba(0,0,0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
 }
 
-#SPOTIFY_ACCOUNT_LIST > *, #SPOTIFY_DEVICE_LIST > *, #SPOTIFY_MODAL_LIST > * {
+#SPOTIFY_ACCOUNT_LIST > *,
+#SPOTIFY_DEVICE_LIST > *,
+#SPOTIFY_MODAL_LIST > * {
   padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-#SPOTIFY_ACCOUNT_LIST > *:hover, #SPOTIFY_ACCOUNT_LIST > *:active, #SPOTIFY_DEVICE_LIST > *:hover, #SPOTIFY_DEVICE_LIST > *:active, #SPOTIFY_MODAL_LIST > *:hover, #SPOTIFY_MODAL_LIST > *:active {
-  background-color:rgba(255,255,255,0.2);
+#SPOTIFY_ACCOUNT_LIST > *:hover,
+#SPOTIFY_ACCOUNT_LIST > *:active,
+#SPOTIFY_DEVICE_LIST > *:hover,
+#SPOTIFY_DEVICE_LIST > *:active,
+#SPOTIFY_MODAL_LIST > *:hover,
+#SPOTIFY_MODAL_LIST > *:active {
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 6px;
 }
 
-#SPOTIFY_ACCOUNT_LIST .text, #SPOTIFY_DEVICE_LIST .text, #SPOTIFY_MODAL_LIST .text {
+#SPOTIFY_ACCOUNT_LIST .text,
+#SPOTIFY_DEVICE_LIST .text,
+#SPOTIFY_MODAL_LIST .text {
   padding-left: 5px;
 }
 
 #SPOTIFY_MODAL > .hidden {
-  display:none;
+  display: none;
 }
 
 /* for MMM-Modal integration */
 #SPOTIFY_MODAL_LIST {
-  background: rgba(0,0,0);
+  background: rgba(0, 0, 0);
   border-radius: 6px;
 }
 
-
 /* control "hidden" */
-#SPOTIFY.hidden #SPOTIFY_CONTROL{
-  display:none;
+#SPOTIFY.hidden #SPOTIFY_CONTROL {
+  display: none;
 }
 
 /* style "mini" */
@@ -217,8 +225,8 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
 }
 
 #SPOTIFY.mini #SPOTIFY_FOREGROUND {
-  flex-direction:row;
-  padding:0;
+  flex-direction: row;
+  padding: 0;
 }
 
 #SPOTIFY.mini .mdi {
@@ -230,40 +238,40 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
 }
 
 #SPOTIFY.mini #SPOTIFY_COVER {
-  width:calc(var(--sp-width) - 240px);
-  height:calc(var(--sp-width) - 240px);
-  padding:0;
+  width: calc(var(--sp-width) - 240px);
+  height: calc(var(--sp-width) - 240px);
+  padding: 0;
 }
 
 #SPOTIFY.mini #SPOTIFY_COVER_IMAGE {
-  height:calc(var(--sp-width) - 240px);
+  height: calc(var(--sp-width) - 240px);
 }
 
 #SPOTIFY.mini #SPOTIFY_INFO {
   width: 240px;
-  padding-left:10px;
-  margin-top:5px;
+  padding-left: 10px;
+  margin-top: 5px;
 }
 
 #SPOTIFY.mini #SPOTIFY_PROGRESS_BAR {
-  margin:5px;
+  margin: 5px;
   width: 95%;
 }
 
 #SPOTIFY.mini #SPOTIFY_PROGRESS_TIME {
-  display:none;
+  display: none;
 }
 
 #SPOTIFY.mini.noPlayback {
-  width:calc(var(--sp-width) - 240px);
+  width: calc(var(--sp-width) - 240px);
 }
 
 #SPOTIFY.noPlayback #SPOTIFY_FOREGROUND > * {
-  display:none;
+  display: none;
 }
 
 #SPOTIFY.noPlayback #SPOTIFY_FOREGROUND #SPOTIFY_COVER {
-  display:block;
+  display: block;
 }
 
 /* style "minimalistBar" */
@@ -348,23 +356,23 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
   display: none;
 }
 
-#SPOTIFY.minimalistBar.pausing #SPOTIFY_PROGRESS_BAR, 
+#SPOTIFY.minimalistBar.pausing #SPOTIFY_PROGRESS_BAR,
 #SPOTIFY.minimalistBar.pausing #SPOTIFY_MISC {
-  filter:brightness(50%) grayscale(75%);
+  filter: brightness(50%) grayscale(75%);
 }
 
 #SPOTIFY.minimalistBar .text {
   width: inherit;
   margin-right: 0.5em;
   white-space: nowrap;
-  display:inline-block;
+  display: inline-block;
   font-size: 1em;
 }
 
 #SPOTIFY.minimalistBar #TEXT_BULLET {
   margin-right: 0.5em;
   white-space: nowrap;
-  display:inline-block;
+  display: inline-block;
   color: grey;
 }
 
@@ -393,22 +401,22 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
 
 #SPOTIFY.minimalistBar #SPOTIFY_FOREGROUND {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: space-between;
-  padding:0;
+  padding: 0;
 }
 
 #SPOTIFY.minimalistBar #SPOTIFY_COVER {
   position: relative;
-  width:var(--minimalist-cover-size);
-  height:var(--minimalist-height);
-  padding:0;
-  z-index:1;
+  width: var(--minimalist-cover-size);
+  height: var(--minimalist-height);
+  padding: 0;
+  z-index: 1;
 }
 
 #SPOTIFY.minimalistBar #SPOTIFY_COVER_IMAGE {
-  height:var(--minimalist-height);
-  border-radius:0px;
+  height: var(--minimalist-height);
+  border-radius: 0px;
 }
 
 #SPOTIFY.minimalistBar #SPOTIFY_CONTROL_PLAY {
@@ -419,31 +427,24 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
 
 #SPOTIFY.minimalistBar #SPOTIFY_MISC {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: space-between;
   margin-left: 0.5vw;
   margin-right: 0.5vw;
   overflow: hidden;
 }
 
-#SPOTIFY_MISC.control  {
-  width:calc(
-    var(--minimalist-width) -
-    var(--minimalist-cover-size) -
-    var(--minimalist-button-size)
-  );
+#SPOTIFY_MISC.control {
+  width: calc(var(--minimalist-width) - var(--minimalist-cover-size) - var(--minimalist-button-size));
 }
 
 #SPOTIFY_MISC.nocontrol {
-  width:calc(
-    var(--minimalist-width) -
-    var(--minimalist-cover-size)
-  );
+  width: calc(var(--minimalist-width) - var(--minimalist-cover-size));
 }
 
 #SPOTIFY.minimalistBar #SPOTIFY_INFO {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: inherit;
@@ -504,7 +505,7 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
 
 #SPOTIFY.minimalistBar #SPOTIFY_INFO_FOOTER {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: space-between;
   align-content: flex-end;
 }
@@ -512,6 +513,6 @@ progress[value]#SPOTIFY_PROGRESS_BAR::-webkit-progress-bar {
 #SPOTIFY.minimalistBar #TEXT_BULLET {
   margin-right: 0.5em;
   white-space: nowrap;
-  display:inline-block;
+  display: inline-block;
   color: grey;
 }

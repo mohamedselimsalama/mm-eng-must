@@ -56,10 +56,10 @@ Or any editor as your wish be ok. Open the `spotify.config.json` then modify it.
 ```json
 [
   {
-      "USERNAME": "USERNAME",
-      "CLIENT_ID" : "YOUR_CLIENT_ID",
-      "CLIENT_SECRET" : "YOUR_CLIENT_SECRET",
-      "TOKEN" : "./token.json"
+    "USERNAME": "USERNAME",
+    "CLIENT_ID": "YOUR_CLIENT_ID",
+    "CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+    "TOKEN": "./token.json"
   }
 ]
 ```
@@ -77,16 +77,16 @@ Or any editor as your wish be ok. Open the `spotify.config.json` then modify it.
 ```json
 [
   {
-      "USERNAME": "AN NAME TO IDENTIFY THIS ACCOUNT",
-      "CLIENT_ID" : "PUT_YOUR_SPOTIFY_APP_CLIENT_ID",
-      "CLIENT_SECRET" : "PUT_YOUR_SPOTIFY_APP_CLIENT_SECRET",
-      "TOKEN" : "./username_token.json"
+    "USERNAME": "AN NAME TO IDENTIFY THIS ACCOUNT",
+    "CLIENT_ID": "PUT_YOUR_SPOTIFY_APP_CLIENT_ID",
+    "CLIENT_SECRET": "PUT_YOUR_SPOTIFY_APP_CLIENT_SECRET",
+    "TOKEN": "./username_token.json"
   },
   {
-      "USERNAME": "ANOTHER NAME TO IDENTIFY THIS ACCOUNT",
-      "CLIENT_ID" : "PUT_YOUR_SPOTIFY_APP_CLIENT_ID",
-      "CLIENT_SECRET" : "PUT_YOUR_SPOTIFY_APP_CLIENT_SECRET",
-      "TOKEN" : "./another_token.json"
+    "USERNAME": "ANOTHER NAME TO IDENTIFY THIS ACCOUNT",
+    "CLIENT_ID": "PUT_YOUR_SPOTIFY_APP_CLIENT_ID",
+    "CLIENT_SECRET": "PUT_YOUR_SPOTIFY_APP_CLIENT_SECRET",
+    "TOKEN": "./another_token.json"
   }
 ]
 ```
@@ -190,10 +190,10 @@ When `search` field exists, `spotifyUri` will be ignored.
 - `SPOTIFY_SEARCH` : search items with query and play it. `type`, `query`, `random` be payloads
 
 ```json
-  this.sendNotification("SPOTIFY_SEARCH", {"type": "artist,playlist", "query": "michael+jackson", "random": false})
+this.sendNotification("SPOTIFY_SEARCH", { "type": "artist,playlist", "query": "michael+jackson", "random": false })
 ```
 
-- `SPOTIFY_PLAY` : playing specific SpotifyUri. There could be two types of uri - `context_uri` and `uris`. 
+- `SPOTIFY_PLAY` : playing specific SpotifyUri. There could be two types of uri - `context_uri` and `uris`.
   - `context_uri:String` : Spotify URI of the context to play. Valid contexts are albums, artists, playlists.
   - `uris:[]`: A JSON array of the Spotify track URIs to play
 
@@ -210,55 +210,55 @@ The SPOTIFY_PLAY notification can also be used as `resume` feature of stopped/pa
 - `SPOTIFY_PAUSE` : pausing current playback.
 
 ```json
-  this.sendNotification("SPOTIFY_PAUSE")
+this.sendNotification("SPOTIFY_PAUSE")
 ```
 
 - `SPOTIFY_TOGGLE` : toggling for playing/pausing
 
 ```json
-  this.sendNotification("SPOTIFY_TOGGLE")
+this.sendNotification("SPOTIFY_TOGGLE")
 ```
 
 - `SPOTIFY_NEXT` : next track of current playback.
 
 ```json
-  this.sendNotification("SPOTIFY_NEXT")
+this.sendNotification("SPOTIFY_NEXT")
 ```
 
 - `SPOTIFY_PREVIOUS` : previous track of current playback.
 
 ```json
-  this.sendNotification("SPOTIFY_PREVIOUS")
+this.sendNotification("SPOTIFY_PREVIOUS")
 ```
 
 - `SPOTIFY_VOLUME` : setting volume of current playback. payload will be volume (0 - 100)
 
 ```json
-  this.sendNotification("SPOTIFY_VOLUME", 50)
+this.sendNotification("SPOTIFY_VOLUME", 50)
 ```
 
 - `SPOTIFY_VOLUME_UP` : increasing volume in this.config.volumeSteps steps. Maximum 100. Useful in combination with touch
 
 ```json
-  this.sendNotification("SPOTIFY_VOLUME_UP")
+this.sendNotification("SPOTIFY_VOLUME_UP")
 ```
 
 - `SPOTIFY_VOLUME_DOWN` : decreasing volume in this.config.volumeSteps steps. Minimum 0. Useful in combination with touch
 
 ```json
-  this.sendNotification("SPOTIFY_VOLUME_DOWN")
+this.sendNotification("SPOTIFY_VOLUME_DOWN")
 ```
 
 - `SPOTIFY_TRANSFER` : change device of playing with device name (e.g: RASPOTIFY)
 
 ```json
-  this.sendNotification("SPOTIFY_TRANSFER", "RASPOTIFY")
+this.sendNotification("SPOTIFY_TRANSFER", "RASPOTIFY")
 ```
 
 - `SPOTIFY_SHUFFLE` : toggle shuffle mode.
 
 ```json
-  this.sendNotification("SPOTIFY_SHUFFLE")
+this.sendNotification("SPOTIFY_SHUFFLE")
 ```
 
 - `SPOTIFY_REPEAT` : change repeat mode. (`off` -> `track` -> `context`)
@@ -351,7 +351,7 @@ It can be used with MMM-pages for example (for show or hide the module)
 - Added & Modified: Multi-account management by notification `SPOTIFY_ACCOUNT`
 - Fixed: Loop CONNECTED/DISCONNECTED on multi-account
 - Fixed: Less CPU time, Less DNS request
-- Fixed: Maybe RPI crashed  when using multi-account (memory leaks)
+- Fixed: Maybe RPI crashed when using multi-account (memory leaks)
 
 ### 1.3.2 (2020-05-15)
 
