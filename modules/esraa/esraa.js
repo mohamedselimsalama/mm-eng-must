@@ -45,7 +45,7 @@ Module.register("esraa", {
 		let news_items = this.shuffle(this.news.items);
 		console.log(news_items, now);
 		this.sendNotification("SAY_IN_ARABIC", news_items[now].title);
-		this.now++;
+		this.now = now++;
 	},
 
 	shuffle: function (array) {
