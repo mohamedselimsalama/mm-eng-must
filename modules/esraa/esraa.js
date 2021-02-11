@@ -36,19 +36,19 @@ Module.register("esraa", {
 	},
 
 	readTheNews: function () {
-		if (this.now) {
-			let now = this.now;
-		} else {
-			let now = 0;
+		let cur = this.now;
+		if (!cur) {
+			cur = 0;
+			this.now = cur;
 		}
 		let max = 3;
-		if (now > max) {
+		if (cur > max) {
 			return true;
 		}
 		let news_items = this.shuffle(this.news.items);
-		console.log(news_items, now);
-		this.sendNotification("SAY_IN_ARABIC", news_items[now].title);
-		this.now = now++;
+		console.log(news_items, cur);
+		this.sendNotification("SAY_IN_ARABIC", news_items[cur].title);
+		this.now = cur++;
 	},
 
 	shuffle: function (array) {
