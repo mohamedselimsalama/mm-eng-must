@@ -36,7 +36,6 @@ Module.register("esraa", {
 	},
 
 	readTheNews: function () {
-		let news_size = this.news.items.lenght;
 		if (this.now) {
 			let now = this.now;
 		} else {
