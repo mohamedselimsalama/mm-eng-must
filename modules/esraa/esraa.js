@@ -25,7 +25,7 @@ Module.register("esraa", {
 				break;
 			case "CALENDAR_EVENTS":
 				this.notifyEvent(payload);
-			case "SPEECH_DISPATCHER_SAID":
+			case "POLLY_SAID":
 				// the first news is said now we need to change to the next news title to say it
 				this.readTheNews(payload);
 				break;
@@ -48,11 +48,13 @@ Module.register("esraa", {
 			}
 			return array;
 		};
-
 		let news_size = this.news.items.lenght;
-		let max = 3;
-		let news_items = shuffle(this.news.items);
 		let now = this.now ?? 0;
+		let max = 3;
+		if (now > max) {
+			return true;
+		}
+		let news_items = shuffle(this.news.items);
 		this.sendNotification("SAY_IN_ARABIC", news_items[now].title);
 		this.now++;
 	},

@@ -36,7 +36,7 @@ class Client:
         audio_stream = resp['AudioStream']
         audio_data = audio_stream.read()
         audio_stream.close()
-        subprocess.run([player,'modules/MMM-Polly/notify.mp3'])
+        # subprocess.run([player,'modules/MMM-Polly/notify.mp3'])
         subprocess.run([player, '-'], input=audio_data, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
         print("FINISHED_UTTERANCE")
