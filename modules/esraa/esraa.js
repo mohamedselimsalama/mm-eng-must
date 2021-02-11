@@ -25,6 +25,7 @@ Module.register("esraa", {
 				break;
 			case "CALENDAR_EVENTS":
 				this.notifyEvent(payload);
+				break;
 			case "POLLY_SAID":
 				// the first news is said now we need to change to the next news title to say it
 				this.readTheNews(payload);
@@ -35,28 +36,30 @@ Module.register("esraa", {
 	},
 
 	readTheNews: function () {
-		let shuffle = function (array) {
-			var i = array.length,
-				j,
-				temp;
-			if (i == 0) return array;
-			while (--i) {
-				j = Math.floor(Math.random() * (i + 1));
-				temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
-			return array;
-		};
 		let news_size = this.news.items.lenght;
 		let now = this.now ?? 0;
 		let max = 3;
 		if (now > max) {
 			return true;
 		}
-		let news_items = shuffle(this.news.items);
+		let news_items = this.shuffle(this.news.items);
+		console.log(news_items);
 		this.sendNotification("SAY_IN_ARABIC", news_items[now].title);
 		this.now++;
+	},
+
+	shuffle: function (array) {
+		var i = array.length,
+			j,
+			temp;
+		if (i == 0) return array;
+		while (--i) {
+			j = Math.floor(Math.random() * (i + 1));
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+		return array;
 	},
 
 	volDown: function () {
