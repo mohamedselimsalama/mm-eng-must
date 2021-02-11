@@ -31,6 +31,7 @@ module.exports = NodeHelper.create({
 
 	startSpeechDispatcher(isAr = 0) {
 		var self = this;
+		var params = [];
 		if (isAr) {
 			var script = "./modules/MMM-Polly/polly_client_ar.py";
 			if (this.config.language) params.push("--lang=" + "arb");
@@ -40,7 +41,6 @@ module.exports = NodeHelper.create({
 			if (this.config.language) params.push("--lang=" + this.config.language);
 			if (this.config.voice) params.push("--voice=" + this.config.voice);
 		}
-		var params = [];
 		if (this.config.rate) params.push("--rate=" + this.config.rate);
 		if (this.config.pitch) params.push("--pitch=" + this.config.pitch);
 		if (this.config.volume) params.push("--volume=" + this.config.volume);
