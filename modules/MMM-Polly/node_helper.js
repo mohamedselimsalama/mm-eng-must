@@ -21,16 +21,26 @@ module.exports = NodeHelper.create({
 			if (this.speakProcess) {
 				this.speakProcess.stdin.write(payload + "\n");
 			}
+		} else if (notification === "TTS_ar") {
+			if (this.speakProcess) {
+				this.startSpeechDispatcher(1);
+				this.speakProcess.stdin.write(payload + "\n");
+			}
 		}
 	},
 
-	startSpeechDispatcher() {
+	startSpeechDispatcher(isAr = 0) {
 		var self = this;
-
-		var script = "./modules/MMM-Polly/polly_client.py";
+		if (isAr) {
+			var script = "./modules/MMM-Polly/polly_client_ar.py";
+			if (this.config.language) params.push("--lang=" + "arb");
+			if (this.config.voice) params.push("--voice=" + "Zeina");
+		} else {
+			var script = "./modules/MMM-Polly/polly_client.py";
+			if (this.config.language) params.push("--lang=" + this.config.language);
+			if (this.config.voice) params.push("--voice=" + this.config.voice);
+		}
 		var params = [];
-		if (this.config.language) params.push("--lang=" + this.config.language);
-		if (this.config.voice) params.push("--voice=" + this.config.voice);
 		if (this.config.rate) params.push("--rate=" + this.config.rate);
 		if (this.config.pitch) params.push("--pitch=" + this.config.pitch);
 		if (this.config.volume) params.push("--volume=" + this.config.volume);

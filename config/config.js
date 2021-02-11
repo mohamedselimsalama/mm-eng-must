@@ -55,7 +55,7 @@ var config = {
 			header: "Your Events",
 			position: "top_left",
 			config: {
-				notifyInterval: 60000,
+				notifyInterval: 50000,
 				fetchInterval: 60000, // in ms 
 				broadcastEvents: false,
 				calendars: [
@@ -80,6 +80,8 @@ var config = {
 				commands: {
 					"play *song": "ESRAA_PLAY",
 					"volume up":"ESRAA_VOL_UP",
+					"volume down":"ESRAA_VOL_DOWN",
+					"volume :number":"ESRAA_SET_VOL",
 				}
 			}
 		},
