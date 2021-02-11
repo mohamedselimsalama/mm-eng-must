@@ -25,12 +25,16 @@ Module.register("esraa", {
 				break;
 			case "CALENDAR_EVENTS":
 				this.notifyEvent(payload);
+			case "SPEECH_DISPATCHER_SAID":
+				// the first news is said now we need to change to the next news title to say it
+				this.readTheNews(payload);
+				break;
 			default:
 				break;
 		}
 	},
 
-	readTheNews: function (news) {
+	readTheNews: function () {
 		let shuffle = function (array) {
 			var i = array.length,
 				j,
@@ -48,11 +52,9 @@ Module.register("esraa", {
 		let news_size = this.news.items.lenght;
 		let max = 3;
 		let news_items = shuffle(this.news.items);
-
-		for (let index = 0; index < max; index++) {
-			console.log(news_items[index]);
-			this.sendNotification("SAY_IN_ARABIC", news_items[index].title);
-		}
+		let now = this.now ?? 0;
+		this.sendNotification("SAY_IN_ARABIC", news_items[now].title);
+		this.now++;
 	},
 
 	volDown: function () {
