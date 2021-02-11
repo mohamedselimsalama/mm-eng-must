@@ -22,16 +22,15 @@ Module.register("MMM-Polly", {
 	},
 
 	notificationReceived(notification, payload) {
-		if (notification === "WILL_BE_ARABIC") {
-			this.config.language = "arb";
+		if (notification === "SAY_IN_ARABIC") {
+			var text = payload.replace(/\s+/gm, " "); // strip newlines
+			text = text.replace("&", " and ");
+			this.sendSocketNotification("TTS_ar", text);
 		}
 
 		if (notification === "SPEECH_DISPATCHER_SAY") {
 			var text = payload.replace(/\s+/gm, " "); // strip newlines
 			text = text.replace("&", " and ");
-			if (this.config.language == "arb") {
-				this.sendSocketNotification("TTS_ar", text);
-			}
 			this.sendSocketNotification("TTS", text);
 		}
 	},

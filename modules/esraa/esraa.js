@@ -8,11 +8,15 @@ Module.register("esraa", {
 	notificationReceived: function (notification, payload, sender) {
 		// console.log(notification);
 		switch (notification) {
+			case "NEWS_FEED":
+				this.news = payload;
+				break;
 			case "ESRAA_PLAY":
 				this.playMusic(payload);
 				break;
-			case "NEWS_FEED":
+			case "ESRAA_NEWS":
 				this.readTheNews(payload);
+				break;
 			case "ESRAA_VOL_DOWN":
 				this.volDown();
 				break;
@@ -27,8 +31,28 @@ Module.register("esraa", {
 	},
 
 	readTheNews: function (news) {
-		this.sendNotification("WILL_BE_ARABIC");
-		console.log(news);
+		let shuffle = function (array) {
+			var i = array.length,
+				j,
+				temp;
+			if (i == 0) return array;
+			while (--i) {
+				j = Math.floor(Math.random() * (i + 1));
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+			return array;
+		};
+
+		let news_size = this.news.items.lenght;
+		let max = 3;
+		let news_items = shuffle(this.news.items);
+
+		for (let index = 0; index < max; index++) {
+			console.log(news_items[index]);
+			this.sendNotification("SAY_IN_ARABIC", news_items[index].title);
+		}
 	},
 
 	volDown: function () {

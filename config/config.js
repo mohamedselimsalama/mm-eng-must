@@ -78,6 +78,7 @@ var config = {
 				deactivateCommand: "goodbye mirror", //Command to deactivate all other commands
 				alertHeard: true, //Whether an alert should be shown when annyang hears a phrase (mostly for debug)
 				commands: {
+					"read the news": "ESRAA_NEWS",
 					"play *song": "ESRAA_PLAY",
 					"volume up":"ESRAA_VOL_UP",
 					"volume down":"ESRAA_VOL_DOWN",
@@ -165,10 +166,11 @@ var config = {
 			module: "newsfeed",
 			position: "bottom",
 			config: {
+				
 				feeds: [
 					{
-						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "CNN",
+						url: "http://arabic.cnn.com/rss/cnnarabic_topnews.rss"
 					}
 				],
 				showSourceTitle: true,
