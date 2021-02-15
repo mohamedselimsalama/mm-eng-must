@@ -30,6 +30,7 @@ Module.register("esraa", {
 			case "POLLY_SAID":
 				// the first news is said now we need to change to the next news title to say it
 				this.cur = this.cur++;
+				console.log(this.cur, payload);
 				this.readTheNews(payload);
 				break;
 			default:
