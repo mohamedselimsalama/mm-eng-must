@@ -17,3 +17,8 @@ npm install
 ```
 node modules/MMM-Spotify/first_auth.js
 ```
+
+
+```
+chmod +x modules/MMM-Polly/polly_client.py;chmod +x modules/MMM-Polly/polly_client_ar.py 
+```
