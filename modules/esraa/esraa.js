@@ -15,6 +15,7 @@ Module.register("esraa", {
 				this.playMusic(payload);
 				break;
 			case "ESRAA_NEWS":
+				this.cur = 0;
 				this.readTheNews(payload);
 				break;
 			case "ESRAA_VOL_DOWN":
@@ -28,6 +29,7 @@ Module.register("esraa", {
 				break;
 			case "POLLY_SAID":
 				// the first news is said now we need to change to the next news title to say it
+				this.cur = this.cur++;
 				this.readTheNews(payload);
 				break;
 			default:
@@ -36,10 +38,10 @@ Module.register("esraa", {
 	},
 
 	readTheNews: function () {
-		let cur = this.now;
+		let cur = this.cur;
 		if (!cur) {
 			cur = 0;
-			this.now = cur;
+			this.cur = cur;
 		}
 		let max = 3;
 		if (cur > max) {
@@ -48,7 +50,7 @@ Module.register("esraa", {
 		let news_items = this.shuffle(this.news.items);
 		console.log(news_items, cur);
 		this.sendNotification("SAY_IN_ARABIC", news_items[cur].title);
-		this.now = cur++;
+		this.cur = cur++;
 	},
 
 	shuffle: function (array) {
