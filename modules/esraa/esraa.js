@@ -39,15 +39,12 @@ Module.register("esraa", {
 
 	readTheNews: function () {
 		let cur = this.cur;
-		if (!cur) {
-			cur = 0;
-			this.cur = cur;
-		}
+		console.log(this.cur);
 		let max = 3;
 		if (cur > max) {
 			return true;
 		}
-		let news_items = this.shuffle(this.news.items);
+		let news_items = this.news.items;
 		console.log(news_items, cur);
 		this.sendNotification("SAY_IN_ARABIC", news_items[cur].title);
 		this.cur = cur++;
